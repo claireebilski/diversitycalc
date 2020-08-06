@@ -52,8 +52,6 @@ export function AddTeam(){
     const handleChange = (e) => {
         // console.log(e);
         setEmailValue(e.target.value);
-        // setSubmitted(false);
-        // console.log(emailValue);
     }
 
     const handleAddEmail = (e) => {
@@ -87,23 +85,15 @@ export function AddTeam(){
     return (
         <>
             <div style={{display: submitted > 0 ? "none" : "block"}}>
-                {/* <div style={{display: submittedState ? "none" : "block"}}> */}
+                
                 <div>
                     <form onSubmit={e=> {handleAddEmail(e);}}>
                         <label htmlFor="email">Teammate emails:</label>
                         <input type="email" pattern=".+@atlassian.com" id="email" value={emailValue} onChange={e=>handleChange(e)} />
-                        <button 
-                            // type="submit" 
-                            // onClick={e=> {
-                            //     e.preventDefault();
-                            //     // handleAddEmail(e);
-                            // }}
-                        >
-                                Add Email
-                        </button>
+                        <button>Add Email</button>
                     </form>
                 </div>
-                {/* <div style={{display: submittedState ? "block" : "none"}}> */}
+               
                 <DrawTable />
                 <div class="" style={{display: emailList.length > 0 ? "block" : "none"}}>
                     <button 
